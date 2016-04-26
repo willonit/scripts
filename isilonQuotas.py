@@ -7,7 +7,7 @@
 import json,commands,os
 
 # Rootdir should be specified as An absolute path within the /ifs file system
-rootDir = "/ifs/"
+rootDir = "/ifs/bluehome"
 
 # Size should be specified as a  scaled value formatted as <integer>[kMGTP]
 quotaSize = "20G"
@@ -30,8 +30,13 @@ childDirs.sort()
 
 # Set quota if one does not already exists
 createdQuotas = 0
-quota = quotaDirs.pop()
+quota = ''
+if quotaDirs: quota = quotaDirs.pop()
 for dir in childDirs:
+
+  while(quotaDirs and quota < dir):
+    quota = quotaDirs.pop()
+
   if dir ==  quota:
     if quotaDirs: quota = quotaDirs.pop()
   else:
