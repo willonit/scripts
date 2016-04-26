@@ -7,7 +7,7 @@
 import json,commands,os
 
 # Rootdir should be specified as An absolute path within the /ifs file system
-rootDir = "/ifs/bluehome"
+rootDir = "/ifs/"
 
 # Size should be specified as a  scaled value formatted as <integer>[kMGTP]
 quotaSize = "20G"
